@@ -1,0 +1,3 @@
+[submodule "fretwork"]
+	path = fretwork
+	url = https://github.com/fofix/fretwork.git
