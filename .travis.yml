@@ -10,6 +10,20 @@ matrix:
               - PY=2.7
 
         - os: linux
+          python: 3.4
+          sudo: required
+          dist: trusty
+          env:
+              - PY=3.4
+
+        - os: linux
+          python: 3.5
+          sudo: required
+          dist: trusty
+          env:
+              - PY=3.5
+
+        - os: linux
           python: 3.6
           sudo: required
           dist: trusty
@@ -19,12 +33,22 @@ matrix:
         - os: osx
           language: generic
           env:
-              - PY_VERSION=2.7
+              - PY_VERSION=2.7.15
 
         - os: osx
           language: generic
           env:
-              - PY_VERSION=3.6
+              - PY_VERSION=3.4.9
+
+        - os: osx
+          language: generic
+          env:
+              - PY_VERSION=3.5.6
+
+        - os: osx
+          language: generic
+          env:
+              - PY_VERSION=3.6.8
 
 before_install:
     - |
@@ -61,13 +85,11 @@ before_install:
 
 install:
     - |
-      if [[ "$PY_VERSION" == "3.6" ]]; then
-        brew install python3;
-        pip3 install virtualenv;
-        python3 -m virtualenv venv;
-        source venv/bin/activate;
-      elif [[ "$PY_VERSION" == "2.7" ]]; then
-        python2 -m virtualenv venv;
+      if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
+        brew install pyenv;
+        pyenv install $PY_VERSION
+        pyenv local $PY_VERSION
+        python -m virtualenv venv;
         source venv/bin/activate;
       fi
     - python --version
