@@ -149,3 +149,12 @@ script:
     - pip install pytest
     - pytest fretwork/tests
     - python -c "from fretwork import mixstream"
+
+deploy:
+    provider: releases
+    api_key:
+        secure: ZBNSpg8tQmheUx9Mr44Pz8bT/FwUMfXn8aawD4iAWIfFI2IVB8kcS7IrBVsxqVzgzmLdNt16VXBGDIWiqN2330ejKPJ4VbYqlurpwj9ZZ7gowhYGTZh8Oz9pW9RbK61PN6ZbE4/zWl85IUiiy4nn/pm5fQJ4muAZjzo9iQRxK+QlwdSUSc7f29vAkRegKIHo5Igt83mOQYVmSr7WP0QLVr7psYEdoc2fLEkQKMjIbDVJ0QyYtBA7ET3UE1nOg87YR0Ph9cQs7oGITgguakGS3SbQqNzcLDNk+s3r+nJ1N9XDhUufZ/nCyTo7i8sHXyOOKcS/gB5dA1yMCj7/wf+c0sMGI8CBabvHtzVtDqwobRa1qhbLkcL1zFxyQ+NpuobzeAPgfTHvFfRbLTf9tc+Wi+MEWLl9pmuU5KV+ErhqImWI1PcA9FiiKKQwK/UUBqYoVmJ2+f5tVf0w5Ar5oVj/8qIT+AdsdCeuym2EGFfN7p8f/ityq9HSdSlDOudb8Zh/e2+ZEHxoYYmYRTVaGjmrEKzVW8A8gNYWF0hAFjL2oimzlOM8cdu2gOwAsLgfBAzQkDfvnOnMV5KayrKg6bhn7/7TL2nsgwFloItsEjEDEFbbf8CmQmey3wTNCa3jdOzb9SYzQFtlNCvEgmRovWZS0NAqo39s/ltyKK1fDox9FYU=
+    file_glob: true
+    file: out/*
+    skip_cleanup: true
+    draft: true
