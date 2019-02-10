@@ -86,9 +86,12 @@ before_install:
 install:
     - |
       if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-        brew install pyenv;
-        pyenv install $PY_VERSION
-        pyenv local $PY_VERSION
+        #brew install pyenv;
+        brew update pyenv;
+        pyenv install --list;
+        pyenv install $PY_VERSION;
+        pyenv local $PY_VERSION;
+        pip install virtualenv;
         python -m virtualenv venv;
         source venv/bin/activate;
       fi
