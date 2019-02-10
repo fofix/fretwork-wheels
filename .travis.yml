@@ -122,9 +122,11 @@ before_script:
         ## install
         pip install auditwheel
         ## repair
+        mkdir -p out
         for whl in fretwork/dist/*.whl; do
             echo $whl
             auditwheel repair $whl -w out/
+            cp $whl out/orig-$whl
         done
         chmod -R a+rwX out
         if [[ "$PY" == "2.7" ]]; then
