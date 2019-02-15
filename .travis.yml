@@ -38,17 +38,17 @@ matrix:
         - os: osx
           language: generic
           env:
-              - PY_VERSION=3.4.9
+              - PY_VERSION=3.4.8
 
         - os: osx
           language: generic
           env:
-              - PY_VERSION=3.5.6
+              - PY_VERSION=3.5.5
 
         - os: osx
           language: generic
           env:
-              - PY_VERSION=3.6.8
+              - PY_VERSION=3.6.5
 
 before_install:
     - |
@@ -87,8 +87,8 @@ install:
     - |
       if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
         #brew install pyenv;
-        brew update pyenv;
-        pyenv install --list;
+        brew upgrade pyenv;
+        #pyenv install --list;
         pyenv install $PY_VERSION;
         pyenv local $PY_VERSION;
         pip install virtualenv;
