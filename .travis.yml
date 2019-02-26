@@ -92,8 +92,10 @@ install:
         #pyenv install --list;
         pyenv install $PY_VERSION;
         #pyenv local $PY_VERSION;
+        eval "$(pyenv init -)";
+        eval "$(pyenv virtualenv-init -)";
         export PYENV_VERSION=$PY_VERSION;
-        export PATH="/Users/travis/.pyenv/shims:${PATH}"
+        export PATH="/Users/travis/.pyenv/shims:${PATH}";
         pyenv virtualenv $PY_VERSION venv;
         pyenv activate venv;
       fi
