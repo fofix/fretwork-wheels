@@ -25,6 +25,14 @@ matrix:
           env:
               - PY=3.7
 
+        # https://www.python.org/dev/peps/pep-0569/
+        - os: linux
+          python: 3.8
+          sudo: required
+          dist: trusty
+          env:
+              - PY=3.8
+
         - os: osx
           language: generic
           env:
@@ -39,6 +47,11 @@ matrix:
           language: generic
           env:
               - PY_VERSION=3.7.9
+
+        - os: osx
+          language: generic
+          env:
+              - PY_VERSION=3.8.7
 
 before_install:
     - |
