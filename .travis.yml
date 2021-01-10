@@ -9,6 +9,7 @@ matrix:
           env:
               - PY=2.7
 
+        # https://www.python.org/dev/peps/pep-0478/
         - os: linux
           python: 3.5
           sudo: required
@@ -16,6 +17,7 @@ matrix:
           env:
               - PY=3.5
 
+        # https://www.python.org/dev/peps/pep-0494/
         - os: linux
           python: 3.6
           sudo: required
