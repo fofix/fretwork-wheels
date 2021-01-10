@@ -20,12 +20,12 @@ matrix:
         - os: osx
           language: generic
           env:
-              - PY_VERSION=2.7.15
+              - PY_VERSION=2.7.18
 
         - os: osx
           language: generic
           env:
-              - PY_VERSION=3.6.5
+              - PY_VERSION=3.6.12
 
 before_install:
     - |
