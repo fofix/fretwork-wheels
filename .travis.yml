@@ -10,13 +10,6 @@ matrix:
               - PY=2.7
 
         - os: linux
-          python: 3.4
-          sudo: required
-          dist: trusty
-          env:
-              - PY=3.4
-
-        - os: linux
           python: 3.5
           sudo: required
           dist: trusty
@@ -34,11 +27,6 @@ matrix:
           language: generic
           env:
               - PY_VERSION=2.7.15
-
-        - os: osx
-          language: generic
-          env:
-              - PY_VERSION=3.4.8
 
         - os: osx
           language: generic
